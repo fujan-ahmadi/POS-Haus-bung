@@ -1,0 +1,21 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class AppUser <<Entity>> {
+  +firstName: String
+  +lastName: String
+  +jobTitle: String
+}
+
+class BillingInfo <<Entity>> {
+  +city: String
+  +address: String
+  +creditCard: String
+}
+
+class Address <<Entity>> {
+  +country: String
+  +city: String
+  +address: String
+}
+@enduml
