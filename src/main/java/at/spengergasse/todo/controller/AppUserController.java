@@ -1,7 +1,7 @@
 package at.spengergasse.todo.controller;
 
 import at.spengergasse.todo.model.AppUser;
-import at.spengergasse.todo.repository.AppUserRepository;
+import at.spengergasse.todo.service.AppUserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,34 +10,36 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/appusers")
 public class AppUserController {
-    private final AppUserRepository appUserRepository;
+    private final AppUserService appUserService;
 
-    public AppUserController(AppUserRepository appUserRepository){
-        this.appUserRepository = appUserRepository;
+    public AppUserController(AppUserService appUserService)
+    {
+        this.appUserService = appUserService;
     }
 
     @GetMapping
     public List<AppUser> ListAll(){
-        return appUserRepository.findAll();
+
+        return appUserService.listAll();
     }
 
     @GetMapping("/{id}")
     public Optional<AppUser> GetById(@PathVariable Long id){
-        return appUserRepository.findById(id);
+        return appUserService.getById(id);
     }
 
     @PostMapping
     public AppUser Insert(@RequestBody AppUser entity){
-        return appUserRepository.save(entity);
+        return appUserService.save(entity);
     }
 
     @PutMapping
     public AppUser Update(@RequestBody AppUser entity){
-        return appUserRepository.save(entity);
+        return appUserService.save(entity);
     }
 
     @DeleteMapping("/{id}")
     public void Delete(@PathVariable Long id){
-        appUserRepository.deleteById(id);
+        appUserService.delete(id);
     }
 }
