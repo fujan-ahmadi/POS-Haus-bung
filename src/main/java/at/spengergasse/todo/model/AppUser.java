@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Objects;
@@ -13,6 +14,7 @@ import java.util.Objects;
 @Table(name = "appUser")
 
 @Getter
+@Setter
 @ToString(callSuper = true)
 public class AppUser extends BaseEntity {
 
