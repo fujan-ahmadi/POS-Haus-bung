@@ -1,4 +1,4 @@
-package at.spengergasse.todo.model;
+package at.spengergasse.todo.viewmodel;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -1,7 +1,7 @@
 package at.spengergasse.todo.controller;
 
 import at.spengergasse.todo.model.BillingInfo;
-import at.spengergasse.todo.model.BillingInfoRequest;
+import at.spengergasse.todo.viewmodel.BillingInfoRequest;
 import at.spengergasse.todo.model.CreditCard;
 import at.spengergasse.todo.repository.BillingInfoRepository;
 import jakarta.validation.Valid;
